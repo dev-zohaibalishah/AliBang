@@ -1,0 +1,170 @@
+<style>
+  .geekbar-videos { background: var(--gk-bg-primary, #0B0D12); padding: 80px 0; color: white; overflow: hidden; }
+  .geekbar-videos .page-width { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
+  .geekbar-videos h2 { font-size: 2.5rem; font-family: var(--gk-font-heading, 'Outfit'); font-weight: 800; text-transform: uppercase; margin-bottom: 40px; text-align: center; }
+  
+  .videos-swiper-container { overflow: visible; padding-bottom: 50px; position: relative; }
+  .videos-swiper-container .swiper-wrapper { display: flex; transition-property: transform; box-sizing: content-box; }
+  .videos-swiper-container .swiper-slide { width: 300px; flex-shrink: 0; padding: 0 10px; transition: transform 0.3s; opacity: 0.5; }
+  .videos-swiper-container .swiper-slide-active { opacity: 1; transform: scale(1.1); z-index: 2; }
+  
+  .box4_item { position: relative; border-radius: 12px; overflow: hidden; background: #000; cursor: pointer; aspect-ratio: 16/9; }
+  .box4_item img.gif { width: 100%; height: 100%; object-fit: cover; display: block; position: relative; z-index: 2; }
+  
+  .box4_mask { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 3; opacity: 0; transition: opacity 0.3s; }
+  .swiper-slide-active .box4_mask { opacity: 1; }
+  
+  .box4_info span { font-size: 1rem; font-weight: 600; color: white; display: block; margin-bottom: 10px; }
+  .box4_text div[data-url] { font-size: 0.85rem; color: var(--gk-accent-cyan, #00E5FF); text-transform: uppercase; letter-spacing: 0.1em; display: inline-flex; align-items: center; gap: 5px; }
+  
+  .video-pop { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
+  .video-pop .main { position: relative; width: 80%; max-width: 1000px; aspect-ratio: 16/9; }
+  .video-pop video { width: 100%; height: 100%; background: #000; }
+  .video-pop .btn-close { position: absolute; top: -40px; right: -40px; width: 30px; height: 30px; background: white; color: black; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-weight: bold; font-size: 1.2rem; }
+  
+  @media screen and (max-width: 768px) {
+    .videos-swiper-container .swiper-slide { width: 85vw; }
+    .video-pop .main { width: 100%; }
+    .video-pop .btn-close { top: 10px; right: 10px; }
+  }
+</style>
+
+<div class="geekbar-videos" id="geekbar-videos">
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+      <h2>{{ section.settings.heading }}</h2>
+    {% endif %}
+    
+    <div class="videos-swiper-container">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide">
+            <div class="box4_item" data-video="{{ block.settings.video_url }}">
+              {% if block.settings.image %}
+                {{ block.settings.image | image_url: width: 600 | image_tag: class: 'gif', loading: 'lazy' }}
+              {% else %}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg gif' }}
+              {% endif %}
+              <div class="box4_mask">
+                <div class="box4_text">
+                  <div class="box4_info">
+                    <span>{{ block.settings.title }}</span>
+                  </div>
+                  <div data-url="{{ block.settings.link }}">
+                    {{ block.settings.link_text }} {% render 'icon-arrow' %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+
+<div class="video-pop" id="videoPopup">
+  <div class="main">
+    <div class="btn-close" id="closeVideo">&times;</div>
+    <video id="popupVideo" controls playsinline></video>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('.videos-swiper-container', {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 20,
+        loop: true,
+        pagination: {
+          el: '.videos-swiper-container .swiper-pagination',
+          clickable: true,
+        },
+      });
+    }
+
+    const videoItems = document.querySelectorAll('.box4_item');
+    const videoPop = document.getElementById('videoPopup');
+    const popupVideo = document.getElementById('popupVideo');
+    const closeBtn = document.getElementById('closeVideo');
+
+    videoItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const videoUrl = this.getAttribute('data-video');
+        if (videoUrl) {
+          popupVideo.src = videoUrl;
+          videoPop.style.display = 'flex';
+          popupVideo.play();
+        }
+      });
+    });
+
+    closeBtn.addEventListener('click', function() {
+      videoPop.style.display = 'none';
+      popupVideo.pause();
+      popupVideo.src = '';
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "GeekBar Videos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "VIDEOS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_slide",
+      "name": "Video Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Cover Image (GIF/Static)"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video File URL (MP4)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Anti counterfeiting measures"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "LEARN MORE"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link URL (optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "GeekBar Videos",
+      "blocks": [
+        { "type": "video_slide" },
+        { "type": "video_slide" },
+        { "type": "video_slide" }
+      ]
+    }
+  ]
+}
+{% endschema %}

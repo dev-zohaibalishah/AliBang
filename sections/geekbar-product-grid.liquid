@@ -1,4 +1,6 @@
 <style>
+  .geekbar-products { background: var(--gk-bg-primary, #0B0D12); padding: 80px 0; overflow: hidden; }
+  .geekbar-products h2 { font-size: 2.5rem; font-family: var(--gk-font-heading, 'Outfit'); font-weight: 800; text-transform: uppercase; margin-bottom: 40px; text-align: center; color: white; }
   .geekbar-products__card { background: var(--gk-bg-card, #1A1D28); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); transition: transform 0.3s, box-shadow 0.3s; }
   .geekbar-products__card:hover { transform: translateY(-6px); box-shadow: 0 0 25px rgba(0,229,255,0.2); }
   .geekbar-products__image { position: relative; aspect-ratio: 1; overflow: hidden; background: #10121A; }
@@ -12,11 +14,13 @@
   .gk-badge--new { background: #00E5FF; color: #000; }
   .gk-badge--hot { background: #FF4757; color: #FFF; }
   .gk-badge--best { background: #FFD600; color: #000; }
-  @media screen and (max-width: 990px) {
-    .geekbar-products__grid { grid-template-columns: repeat(3, 1fr) !important; }
-  }
-  @media screen and (max-width: 750px) {
-    .geekbar-products__grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  .products-swiper-container { overflow: visible; padding-bottom: 50px; position: relative; }
+  .products-swiper-container .swiper-wrapper { display: flex; transition-property: transform; box-sizing: content-box; }
+  .products-swiper-container .swiper-slide { width: 300px; flex-shrink: 0; padding: 0 10px; }
+  
+  @media screen and (max-width: 768px) {
+    .products-swiper-container .swiper-slide { width: 80vw; }
   }
 </style>
 
@@ -29,50 +33,55 @@
     <p class="gk-section-subtitle gk-fade-in" style="text-align:center;color:var(--gk-text-secondary);margin-top:-40px;margin-bottom:50px;font-size:1.1rem;">{{ section.settings.subheading }}</p>
     {% endif %}
     
-    {% assign collection = collections[section.settings.collection] %}
-    {% if collection != blank %}
-    <div class="geekbar-products__grid" style="display:grid;grid-template-columns:repeat({{ section.settings.columns }}, 1fr);gap:24px;">
-      {% for product in collection.products limit: section.settings.products_to_show %}
-      <div class="geekbar-products__card gk-fade-in" style="--animation-order: {{ forloop.index }};">
-        <a href="{{ product.url }}" class="geekbar-products__card-link">
-          <div class="geekbar-products__image">
-            {% if product.featured_image %}
-            {{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'geekbar-products__img' }}
-            {% else %}
-            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-            {% endif %}
-            {% if product.tags contains 'new' %}
-            <span class="gk-badge gk-badge--new">NEW</span>
-            {% elsif product.tags contains 'hot' %}
-            <span class="gk-badge gk-badge--hot">HOT</span>
-            {% elsif product.tags contains 'bestseller' %}
-            <span class="gk-badge gk-badge--best">BESTSELLER</span>
-            {% endif %}
+    <div class="products-swiper-container">
+      <div class="swiper-wrapper">
+        {% assign collection = collections[section.settings.collection] %}
+        {% if collection != blank %}
+          {% for product in collection.products limit: section.settings.products_to_show %}
+          <div class="swiper-slide">
+            <div class="geekbar-products__card gk-fade-in" style="--animation-order: {{ forloop.index }};">
+              <a href="{{ product.url }}" class="geekbar-products__card-link">
+                <div class="geekbar-products__image">
+                  {% if product.featured_image %}
+                  {{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', class: 'geekbar-products__img' }}
+                  {% else %}
+                  {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {% endif %}
+                  {% if product.tags contains 'new' %}
+                  <span class="gk-badge gk-badge--new">NEW</span>
+                  {% elsif product.tags contains 'hot' %}
+                  <span class="gk-badge gk-badge--hot">HOT</span>
+                  {% elsif product.tags contains 'bestseller' %}
+                  <span class="gk-badge gk-badge--best">BESTSELLER</span>
+                  {% endif %}
+                </div>
+                <div class="geekbar-products__info">
+                  <h3 class="geekbar-products__name">{{ product.title }}</h3>
+                  <p class="geekbar-products__price">{{ product.price | money }}</p>
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="geekbar-products__info">
-            <h3 class="geekbar-products__name">{{ product.title }}</h3>
-            <p class="geekbar-products__price">{{ product.price | money }}</p>
+          {% endfor %}
+        {% else %}
+          <!-- Placeholder when no collection selected -->
+          {% for i in (1..section.settings.products_to_show) %}
+          <div class="swiper-slide">
+            <div class="geekbar-products__card gk-fade-in">
+              <div class="geekbar-products__image">
+                {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+              <div class="geekbar-products__info">
+                <h3 class="geekbar-products__name">Sample Product {{ i }}</h3>
+                <p class="geekbar-products__price">$29.99</p>
+              </div>
+            </div>
           </div>
-        </a>
+          {% endfor %}
+        {% endif %}
       </div>
-      {% endfor %}
+      <div class="swiper-pagination"></div>
     </div>
-    {% else %}
-    <!-- Placeholder when no collection selected -->
-    <div class="geekbar-products__grid" style="display:grid;grid-template-columns:repeat({{ section.settings.columns }}, 1fr);gap:24px;">
-      {% for i in (1..section.settings.products_to_show) %}
-      <div class="geekbar-products__card gk-fade-in">
-        <div class="geekbar-products__image">
-          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-        </div>
-        <div class="geekbar-products__info">
-          <h3 class="geekbar-products__name">Sample Product {{ i }}</h3>
-          <p class="geekbar-products__price">$29.99</p>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    {% endif %}
     
     {% if section.settings.show_view_all and section.settings.collection != blank %}
     <div style="text-align:center;margin-top:50px;">
@@ -82,15 +91,35 @@
   </div>
 </div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('.products-swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.products-swiper-container .swiper-pagination',
+          clickable: true,
+        },
+      });
+    }
+  });
+</script>
+
 {% schema %}
 {
-  "name": "GeekBar Product Grid",
+  "name": "GeekBar Product Slider",
   "settings": [
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "OUR PRODUCTS"
+      "default": "Products"
     },
     {
       "type": "textarea",
@@ -112,26 +141,15 @@
       "label": "Products to show"
     },
     {
-      "type": "select",
-      "id": "columns",
-      "options": [
-        { "value": "2", "label": "2" },
-        { "value": "3", "label": "3" },
-        { "value": "4", "label": "4" }
-      ],
-      "default": "4",
-      "label": "Columns on desktop"
-    },
-    {
       "type": "checkbox",
       "id": "show_view_all",
-      "default": true,
+      "default": false,
       "label": "Show 'View all' button"
     }
   ],
   "presets": [
     {
-      "name": "GeekBar Product Grid"
+      "name": "GeekBar Product Slider"
     }
   ]
 }

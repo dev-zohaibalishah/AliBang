@@ -1,0 +1,116 @@
+<style>
+  .geekbar-social { background: var(--gk-bg-primary, #0B0D12); padding: 50px 0; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+  
+  .slogan-box { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 30px; overflow: hidden; }
+  .slogan-box ul { display: flex; list-style: none; padding: 0; margin: 0; width: max-content; animation: scrollLeft 30s linear infinite; }
+  .slogan-box li { color: white; font-size: 1.5rem; font-weight: 700; text-transform: uppercase; white-space: nowrap; margin-right: 50px; font-family: var(--gk-font-heading, 'Outfit'); letter-spacing: 0.1em; }
+  
+  .image-list { overflow: hidden; }
+  .image-list ul { display: flex; list-style: none; padding: 0; margin: 0; width: max-content; animation: scrollRight 40s linear infinite; }
+  .image-list li { margin-right: 20px; width: 300px; height: 300px; position: relative; border-radius: 12px; overflow: hidden; }
+  .image-list li img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+  .image-list li:hover img { transform: scale(1.1); }
+  .image-list li a { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); opacity: 0; transition: opacity 0.3s; color: white; font-size: 2rem; }
+  .image-list li:hover a { opacity: 1; }
+
+  @keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes scrollRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+
+  @media screen and (max-width: 768px) {
+    .image-list li { width: 200px; height: 200px; }
+    .slogan-box li { font-size: 1.2rem; margin-right: 30px; }
+  }
+</style>
+
+<div class="geekbar-social" id="geekbar-social">
+  <div class="slogan-box">
+    <ul>
+      {% for i in (1..20) %}
+        <li>{{ section.settings.slogan_text }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  
+  <div class="image-list">
+    <ul>
+      {% for block in section.blocks %}
+        <li>
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" target="_blank">{% render 'icon-instagram' %}</a>
+          {% endif %}
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy' }}
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </li>
+      {% endfor %}
+      <!-- Duplicate for seamless scroll -->
+      {% for block in section.blocks %}
+        <li>
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" target="_blank">{% render 'icon-instagram' %}</a>
+          {% endif %}
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy' }}
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "GeekBar Social Media",
+  "settings": [
+    {
+      "type": "text",
+      "id": "slogan_text",
+      "label": "Ticker Text",
+      "default": "Follow us @geekbarvape"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "social_image",
+      "name": "Social Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (e.g. Instagram URL)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "GeekBar Social Media",
+      "blocks": [
+        { "type": "social_image" },
+        { "type": "social_image" },
+        { "type": "social_image" },
+        { "type": "social_image" },
+        { "type": "social_image" },
+        { "type": "social_image" },
+        { "type": "social_image" },
+        { "type": "social_image" }
+      ]
+    }
+  ]
+}
+{% endschema %}
