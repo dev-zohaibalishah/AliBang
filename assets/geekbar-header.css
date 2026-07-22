@@ -1,0 +1,87 @@
+/* GeekBar Header CSS */
+.header-wrapper {
+  position: sticky !important;
+  top: 0;
+  backdrop-filter: blur(20px) !important;
+  background: rgba(11, 13, 18, 0.9) !important;
+  z-index: 1000 !important;
+  border-bottom: 1px solid var(--gk-border-color) !important;
+  transition: background 0.3s ease !important;
+}
+
+.shopify-section-header-sticky .header-wrapper {
+  background: rgba(11, 13, 18, 0.95) !important;
+}
+
+.header {
+  color: var(--gk-text-primary) !important;
+}
+
+.header__heading-link, .header__heading-logo {
+  filter: brightness(100%) !important;
+}
+
+.header__menu-item, .list-menu__item--link {
+  color: var(--gk-text-secondary) !important;
+  text-transform: uppercase !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.12em !important;
+  font-weight: 500 !important;
+  position: relative;
+  text-decoration: none;
+}
+
+.header__menu-item:hover, .list-menu__item--link:hover {
+  color: var(--gk-text-primary) !important;
+}
+
+.header__menu-item::after, .list-menu__item--link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gk-accent-cyan);
+  transition: width 0.3s ease;
+}
+
+.header__menu-item:hover::after, .list-menu__item--link:hover::after {
+  width: 100%;
+}
+
+.header__icon {
+  color: var(--gk-text-secondary) !important;
+  transition: var(--gk-transition);
+}
+
+.header__icon:hover {
+  color: var(--gk-text-primary) !important;
+}
+
+.cart-count-bubble {
+  background: var(--gk-accent-cyan) !important;
+  color: var(--gk-bg-primary) !important;
+  font-weight: 700 !important;
+}
+
+.menu-drawer {
+  background: var(--gk-bg-primary) !important;
+  color: var(--gk-text-primary) !important;
+}
+
+.menu-drawer__menu-item {
+  color: var(--gk-text-secondary) !important;
+  border-bottom: 1px solid var(--gk-border-color) !important;
+}
+
+.mega-menu {
+  background: var(--gk-bg-secondary) !important;
+  border: 1px solid var(--gk-border-color) !important;
+  border-radius: 0 0 16px 16px !important;
+}
+
+.search-modal {
+  background: rgba(11, 13, 18, 0.95) !important;
+  backdrop-filter: blur(10px);
+}

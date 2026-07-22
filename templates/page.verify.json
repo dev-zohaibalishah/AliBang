@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "verify": {
+      "type": "geekbar-verify",
+      "settings": {
+        "heading": "AUTHENTICITY VERIFICATION",
+        "subheading": "Protect yourself against counterfeit products. Verify your genuine AliBang device below."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "verify"
+  ]
+}

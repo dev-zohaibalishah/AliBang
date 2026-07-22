@@ -1,0 +1,84 @@
+{
+  "sections": {
+    "geekbar_hero": {
+      "type": "geekbar-hero",
+      "blocks": {
+        "slide_1": {
+          "type": "slide"
+        },
+        "slide_2": {
+          "type": "slide"
+        }
+      },
+      "block_order": ["slide_1", "slide_2"],
+      "settings": {
+        "autoplay": true,
+        "autoplay_speed": 5
+      }
+    },
+    "geekbar_products": {
+      "type": "geekbar-product-grid",
+      "settings": {
+        "heading": "OUR PRODUCTS",
+        "products_to_show": 8,
+        "columns": "4",
+        "show_view_all": true
+      }
+    },
+    "geekbar_tech": {
+      "type": "geekbar-tech-showcase",
+      "blocks": {
+        "feat_1": {
+          "type": "feature",
+          "settings": { "icon": "chip", "title": "Advanced Chipset" }
+        },
+        "feat_2": {
+          "type": "feature",
+          "settings": { "icon": "screen", "title": "Smart Display" }
+        },
+        "feat_3": {
+          "type": "feature",
+          "settings": { "icon": "battery", "title": "Long-lasting Battery" }
+        },
+        "feat_4": {
+          "type": "feature",
+          "settings": { "icon": "coil", "title": "Mesh Coil Tech" }
+        }
+      },
+      "block_order": ["feat_1", "feat_2", "feat_3", "feat_4"],
+      "settings": {
+        "heading": "INNOVATION & TECHNOLOGY"
+      }
+    },
+    "geekbar_flavors": {
+      "type": "geekbar-flavor-universe",
+      "blocks": {
+        "flv_1": { "type": "flavor", "settings": { "name": "Sour Apple", "color": "#39FF14" } },
+        "flv_2": { "type": "flavor", "settings": { "name": "Blue Razz", "color": "#00A8FF" } },
+        "flv_3": { "type": "flavor", "settings": { "name": "Watermelon", "color": "#FF4757" } },
+        "flv_4": { "type": "flavor", "settings": { "name": "Mango", "color": "#FFD600" } },
+        "flv_5": { "type": "flavor", "settings": { "name": "Grape", "color": "#9B59B6" } },
+        "flv_6": { "type": "flavor", "settings": { "name": "Mint", "color": "#00E5FF" } },
+        "flv_7": { "type": "flavor", "settings": { "name": "Strawberry", "color": "#FF00E5" } },
+        "flv_8": { "type": "flavor", "settings": { "name": "Peach", "color": "#FF8C42" } }
+      },
+      "block_order": ["flv_1", "flv_2", "flv_3", "flv_4", "flv_5", "flv_6", "flv_7", "flv_8"],
+      "settings": {
+        "heading": "EXPLORE OUR FLAVORS"
+      }
+    },
+    "geekbar_news": {
+      "type": "geekbar-news-grid",
+      "blocks": {
+        "news_1": { "type": "article" },
+        "news_2": { "type": "article" },
+        "news_3": { "type": "article" }
+      },
+      "block_order": ["news_1", "news_2", "news_3"],
+      "settings": {
+        "heading": "LATEST NEWS & EVENTS"
+      }
+    }
+  },
+  "order": ["geekbar_hero", "geekbar_products", "geekbar_tech", "geekbar_flavors", "geekbar_news"]
+}

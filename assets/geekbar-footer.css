@@ -1,0 +1,75 @@
+/* GeekBar Footer CSS */
+.footer {
+  background: var(--gk-bg-primary) !important;
+  color: var(--gk-text-secondary) !important;
+  border-top: 1px solid var(--gk-border-color) !important;
+  margin-top: 0 !important;
+}
+
+.footer__content-top {
+  border-bottom: 1px solid var(--gk-border-color) !important;
+  padding-bottom: 50px !important;
+}
+
+.footer-block__heading {
+  color: var(--gk-text-primary) !important;
+  text-transform: uppercase !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.1em !important;
+  margin-bottom: 20px !important;
+}
+
+.footer-block__details-content a {
+  color: var(--gk-text-secondary) !important;
+  transition: var(--gk-transition) !important;
+  text-decoration: none !important;
+}
+
+.footer-block__details-content a:hover {
+  color: var(--gk-text-primary) !important;
+}
+
+/* Newsletter */
+.newsletter-form__field-wrapper input {
+  background: var(--gk-bg-card) !important;
+  border: 1px solid var(--gk-border-color) !important;
+  color: var(--gk-text-primary) !important;
+  border-radius: 8px !important;
+}
+
+.newsletter-form__field-wrapper input:focus {
+  border-color: var(--gk-accent-cyan) !important;
+  box-shadow: var(--gk-glow-cyan) !important;
+}
+
+.newsletter-form__button {
+  background: var(--gk-accent-cyan) !important;
+  color: var(--gk-bg-primary) !important;
+  border-radius: 0 8px 8px 0 !important;
+}
+
+.footer__copyright {
+  color: var(--gk-text-muted) !important;
+}
+
+.list-social__item .icon {
+  color: var(--gk-text-muted) !important;
+  transition: var(--gk-transition) !important;
+}
+
+.list-social__item:hover .icon {
+  color: var(--gk-accent-cyan) !important;
+}
+
+.footer__content-bottom {
+  border-top: 1px solid var(--gk-border-color) !important;
+}
+
+.list-payment__item {
+  filter: brightness(0.7) !important;
+  transition: filter 0.3s ease !important;
+}
+
+.list-payment__item:hover {
+  filter: brightness(1) !important;
+}

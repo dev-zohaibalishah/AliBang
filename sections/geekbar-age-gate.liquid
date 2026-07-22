@@ -1,0 +1,201 @@
+{%- style -%}
+.gk-age-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(11, 13, 18, 0.95);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.gk-age-gate.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.gk-age-gate__container {
+  max-width: 500px;
+  width: 100%;
+  background: #161922;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.15);
+}
+
+.gk-age-gate__logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.gk-age-gate__logo span {
+  color: #00E5FF;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.gk-age-gate__title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+
+.gk-age-gate__text {
+  color: #a0a5b5;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.gk-age-gate__buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.gk-age-gate__btn {
+  flex: 1;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gk-age-gate__btn--yes {
+  background: linear-gradient(135deg, #00E5FF, #00B8D4);
+  color: #0b0d12;
+  border: none;
+}
+
+.gk-age-gate__btn--yes:hover {
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.gk-age-gate__btn--no {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.gk-age-gate__btn--no:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.gk-age-gate__warning {
+  background: rgba(255, 0, 229, 0.05);
+  border: 1px solid rgba(255, 0, 229, 0.2);
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #ff00e5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+{%- endstyle -%}
+
+<div id="AgeGate" class="gk-age-gate">
+  <div class="gk-age-gate__container">
+    <div class="gk-age-gate__logo">
+      ALIBANG<span>.</span>
+    </div>
+    <h2 class="gk-age-gate__title">{{ section.settings.title }}</h2>
+    <p class="gk-age-gate__text">{{ section.settings.text }}</p>
+    
+    <div class="gk-age-gate__buttons">
+      <button id="AgeGateYes" class="gk-age-gate__btn gk-age-gate__btn--yes">{{ section.settings.btn_yes_text }}</button>
+      <button id="AgeGateNo" class="gk-age-gate__btn gk-age-gate__btn--no">{{ section.settings.btn_no_text }}</button>
+    </div>
+    
+    <div class="gk-age-gate__warning">
+      {{ section.settings.warning_text }}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const ageGate = document.getElementById('AgeGate');
+    const btnYes = document.getElementById('AgeGateYes');
+    const btnNo = document.getElementById('AgeGateNo');
+    
+    // Check if verified
+    const isVerified = localStorage.getItem('alibang_age_verified');
+    
+    if (isVerified === 'true') {
+      ageGate.classList.add('hidden');
+    }
+    
+    btnYes.addEventListener('click', function() {
+      localStorage.setItem('alibang_age_verified', 'true');
+      ageGate.classList.add('hidden');
+    });
+    
+    btnNo.addEventListener('click', function() {
+      // Redirect to Google or external safe site
+      window.location.href = 'https://www.google.com';
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Age Gate Overlay",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Modal Title",
+      "default": "AGE VERIFICATION"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Disclaimer Text",
+      "default": "The products on this website are intended for adults only. By entering, you confirm you are 21 years of age or older."
+    },
+    {
+      "type": "text",
+      "id": "btn_yes_text",
+      "label": "Confirm Button Text",
+      "default": "YES, I AM 21+"
+    },
+    {
+      "type": "text",
+      "id": "btn_no_text",
+      "label": "Cancel Button Text",
+      "default": "NO, EXIT"
+    },
+    {
+      "type": "textarea",
+      "id": "warning_text",
+      "label": "Nicotine Warning Text",
+      "default": "WARNING: This product contains nicotine. Nicotine is an addictive chemical."
+    }
+  ]
+}
+{% endschema %}

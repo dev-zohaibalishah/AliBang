@@ -1,0 +1,239 @@
+/* GeekBar Dark Cyberpunk Theme - Global CSS Override */
+
+:root {
+  --gk-bg-primary: #0B0D12;
+  --gk-bg-secondary: #10121A;
+  --gk-bg-card: #1A1D28;
+  --gk-bg-card-hover: #222636;
+  --gk-accent-cyan: #00E5FF;
+  --gk-accent-green: #39FF14;
+  --gk-accent-magenta: #FF00E5;
+  --gk-accent-yellow: #FFD600;
+  --gk-accent-primary: #00E5FF;
+  --gk-text-primary: #FFFFFF;
+  --gk-text-secondary: #A0A5B5;
+  --gk-text-muted: #6B7085;
+  --gk-border-color: rgba(255, 255, 255, 0.08);
+  --gk-glass-bg: rgba(26, 29, 40, 0.85);
+  --gk-glass-border: rgba(255, 255, 255, 0.1);
+  --gk-glow-cyan: 0 0 20px rgba(0, 229, 255, 0.3);
+  --gk-glow-magenta: 0 0 20px rgba(255, 0, 229, 0.3);
+  --gk-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --gk-font-heading: 'Outfit', sans-serif;
+  --gk-font-body: 'Inter', sans-serif;
+
+  /* Override Dawn Color Scheme Variables */
+  --color-background: #0B0D12;
+  --color-foreground: #FFFFFF;
+  --color-base-background-1: #0B0D12;
+  --color-base-background-2: #10121A;
+  --color-base-text: #FFFFFF;
+  --color-button: #00E5FF;
+  --color-button-text: #0B0D12;
+  --color-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Global Overrides */
+body {
+  background: var(--gk-bg-primary) !important;
+  color: var(--gk-text-primary) !important;
+  font-family: var(--gk-font-body) !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--gk-font-heading) !important;
+  color: var(--gk-text-primary) !important;
+  font-weight: 700 !important;
+}
+
+a {
+  color: var(--gk-accent-cyan);
+  transition: var(--gk-transition);
+}
+
+a:hover {
+  color: var(--gk-accent-primary);
+  text-shadow: var(--gk-glow-cyan);
+}
+
+.page-width {
+  max-width: 1400px !important;
+}
+
+/* Color Scheme Overrides */
+[class*="color-scheme-"] {
+  background: var(--gk-bg-primary) !important;
+  color: var(--gk-text-primary) !important;
+}
+
+.gradient {
+  background: var(--gk-bg-primary) !important;
+}
+
+/* Button Styles */
+.button, button[type='submit'], .shopify-challenge__button, .customer button {
+  background: linear-gradient(135deg, #00E5FF, #00B8D4) !important;
+  color: #0B0D12 !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  padding: 14px 32px !important;
+  border: none !important;
+  transition: var(--gk-transition) !important;
+}
+
+.button:hover, button[type='submit']:hover, .shopify-challenge__button:hover, .customer button:hover {
+  box-shadow: var(--gk-glow-cyan) !important;
+  transform: translateY(-2px);
+}
+
+.button--secondary {
+  background: transparent !important;
+  border: 1px solid var(--gk-accent-cyan) !important;
+  color: var(--gk-accent-cyan) !important;
+}
+
+.button--secondary:hover {
+  background: var(--gk-accent-cyan) !important;
+  color: #0B0D12 !important;
+}
+
+/* Card Styles */
+.card, .card-wrapper {
+  background: var(--gk-bg-card) !important;
+  border-radius: 16px !important;
+  border: 1px solid var(--gk-border-color) !important;
+  overflow: hidden !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--gk-glow-cyan) !important;
+}
+
+.card__content, .card__information {
+  background: transparent !important;
+  color: var(--gk-text-primary) !important;
+}
+
+.card__heading {
+  color: var(--gk-text-primary) !important;
+}
+
+/* Form Elements */
+.field__input, .form__input, input, textarea, select {
+  background: var(--gk-bg-card) !important;
+  border: 1px solid var(--gk-border-color) !important;
+  color: var(--gk-text-primary) !important;
+  border-radius: 8px !important;
+  transition: var(--gk-transition);
+}
+
+.field__input:focus, .form__input:focus, input:focus, textarea:focus, select:focus {
+  border-color: var(--gk-accent-cyan) !important;
+  box-shadow: var(--gk-glow-cyan) !important;
+  outline: none !important;
+}
+
+/* Utility Classes */
+.gk-glass {
+  backdrop-filter: blur(20px);
+  background: var(--gk-glass-bg);
+  border: 1px solid var(--gk-glass-border);
+  border-radius: 16px;
+}
+
+.gk-neon-text {
+  color: var(--gk-accent-cyan);
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.gk-gradient-text {
+  background: linear-gradient(135deg, #00E5FF, #FF00E5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.gk-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.gk-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gk-section {
+  padding: 80px 0;
+}
+@media (max-width: 750px) {
+  .gk-section {
+    padding: 50px 0;
+  }
+}
+
+.gk-section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 60px;
+  letter-spacing: 0.05em;
+}
+
+.gk-badge {
+  display: inline-flex;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.gk-badge--new {
+  background: rgba(57, 255, 20, 0.15);
+  color: #39FF14;
+  border: 1px solid rgba(57, 255, 20, 0.3);
+}
+
+.gk-badge--hot {
+  background: rgba(255, 0, 229, 0.15);
+  color: #FF00E5;
+  border: 1px solid rgba(255, 0, 229, 0.3);
+}
+
+.gk-badge--best {
+  background: rgba(255, 214, 0, 0.15);
+  color: #FFD600;
+  border: 1px solid rgba(255, 214, 0, 0.3);
+}
+
+/* Override Dawn Specifics */
+.section-header {
+  background: transparent !important;
+}
+
+.header-wrapper {
+  background: var(--gk-bg-primary) !important;
+  border-bottom: 1px solid var(--gk-border-color) !important;
+}
+
+.footer, .content-for-layout {
+  background: var(--gk-bg-primary) !important;
+}
+
+.predictive-search, .cart-notification, .cart-drawer {
+  background: var(--gk-bg-secondary) !important;
+  color: var(--gk-text-primary) !important;
+}
+
+.announcement-bar {
+  background: var(--gk-bg-secondary) !important;
+  border-bottom: 1px solid var(--gk-accent-cyan) !important;
+}

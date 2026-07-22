@@ -1,0 +1,164 @@
+/* GeekBar Hero Carousel CSS */
+.geekbar-hero {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  overflow: hidden;
+  background: var(--gk-bg-primary);
+}
+
+@media (max-width: 750px) {
+  .geekbar-hero {
+    min-height: 70vh;
+  }
+}
+
+.geekbar-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(0, 229, 255, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 80% 70%, rgba(255, 0, 229, 0.15) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.geekbar-hero__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  display: flex;
+  align-items: center;
+  z-index: 0;
+}
+
+.geekbar-hero__slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.geekbar-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.geekbar-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11, 13, 18, 0.7), rgba(16, 18, 26, 0.4));
+  z-index: 1;
+}
+
+.geekbar-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 0 5%;
+  animation: hero-fade-up 1s forwards;
+}
+
+.geekbar-hero__tag {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 30px;
+  border: 1px solid var(--gk-accent-cyan);
+  color: var(--gk-accent-cyan);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+}
+
+.geekbar-hero__title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.geekbar-hero__title span {
+  color: var(--gk-accent-cyan);
+}
+
+.geekbar-hero__subtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--gk-text-secondary);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.geekbar-hero__dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.geekbar-hero__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: var(--gk-transition);
+}
+
+.geekbar-hero__dot.active {
+  background: var(--gk-accent-cyan);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.geekbar-hero__arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 10;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.geekbar-hero__arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: var(--gk-transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.geekbar-hero__arrow:hover {
+  background: rgba(0, 229, 255, 0.2);
+  border-color: var(--gk-accent-cyan);
+  color: var(--gk-accent-cyan);
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
