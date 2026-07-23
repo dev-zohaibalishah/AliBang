@@ -50,12 +50,13 @@
           "settings": {
             "heading": "Description",
             "icon": "check_mark",
-            "content": "{{ product.description }}",
+            "content": "<p>{{ product.description }}</p>",
             "page": ""
           }
         },
         "description": {
           "type": "description",
+          "disabled": true,
           "settings": {}
         },
         "share": {
