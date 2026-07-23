@@ -99,6 +99,7 @@
         "feature_1": {
           "type": "feature",
           "settings": {
+            "image": "{{ product.metafields.custom.key_feature_1.value }}",
             "tag": "TECHNOLOGY",
             "heading": "3D CURVED SCREEN",
             "description": "World's first 3D curved full screen display with real-time battery and e-liquid monitoring.",
