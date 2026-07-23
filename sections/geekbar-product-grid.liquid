@@ -64,15 +64,20 @@
           </div>
           {% endfor %}
         {% else %}
-          <!-- Placeholder when no collection selected -->
-          {% for i in (1..section.settings.products_to_show) %}
+          <!-- Demo products when no collection selected -->
+          {% assign demo_titles = "Juicy Peach Ice | Grape Ice,Strawberry Watermelon,Blue Razz Ice,Sour Apple Ice,Tropical Mango,Cool Mint" | split: "," %}
+          {% for i in (1..6) %}
+          {% assign img_name = 'product-img-' | append: i | append: '.jpg' %}
+          {% assign title_index = i | minus: 1 %}
           <div class="swiper-slide">
             <div class="geekbar-products__card gk-fade-in">
               <div class="geekbar-products__image">
-                {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                <img src="{{ img_name | asset_url }}" alt="{{ demo_titles[title_index] }}" class="geekbar-products__img" loading="lazy">
+                {% if i == 1 %}<span class="gk-badge gk-badge--new">NEW</span>{% elsif i == 2 %}<span class="gk-badge gk-badge--hot">HOT</span>{% elsif i == 3 %}<span class="gk-badge gk-badge--best">BESTSELLER</span>{% endif %}
               </div>
               <div class="geekbar-products__info">
-                <h3 class="geekbar-products__name">Sample Product {{ i }}</h3>
+                <h3 class="geekbar-products__name">ALIBARBAR 35000 Puffs</h3>
+                <p style="color:var(--gk-text-secondary,#a0a5b5);font-size:0.85rem;margin-bottom:6px;">{{ demo_titles[title_index] }}</p>
                 <p class="geekbar-products__price">$29.99</p>
               </div>
             </div>

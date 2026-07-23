@@ -152,7 +152,7 @@
                 }}
               </div>
             {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
+              <img src="{{ 'alibang-logo.jpg' | asset_url }}" alt="{{ shop.name }}" style="max-height: 50px; width: auto; object-fit: contain;" class="header__heading-logo">
             {%- endif -%}
           </a>
       {%- if request.page_type == 'index' -%}
@@ -192,7 +192,7 @@
                 }}
               </div>
             {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
+              <img src="{{ 'alibang-logo.jpg' | asset_url }}" alt="{{ shop.name }}" style="max-height: 50px; width: auto; object-fit: contain;" class="header__heading-logo">
             {%- endif -%}
           </a>
       {%- if request.page_type == 'index' -%}
