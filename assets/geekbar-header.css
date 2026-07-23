@@ -85,3 +85,43 @@
   background: rgba(11, 13, 18, 0.95) !important;
   backdrop-filter: blur(10px);
 }
+
+/* Announcement Bar - 100% Full Screen Width Wall-to-Wall */
+.shopify-section-announcement-bar,
+.utility-bar,
+.announcement-bar-section {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  background: #000000 !important;
+  border-bottom: 1px solid var(--gk-border-color, rgba(255, 255, 255, 0.08)) !important;
+}
+
+.utility-bar__grid {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.announcement-bar {
+  background: transparent !important;
+  border: none !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.announcement-bar__message {
+  font-family: var(--gk-font-body, 'Inter', sans-serif) !important;
+  font-weight: 700 !important;
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem) !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--gk-accent-cyan, #00E5FF) !important;
+  padding: 8px 0 !important;
+}
+
+.announcement-bar__link {
+  color: inherit !important;
+  text-decoration: none !important;
+}

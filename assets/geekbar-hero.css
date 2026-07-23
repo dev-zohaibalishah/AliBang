@@ -121,12 +121,13 @@
 .geekbar-hero__arrows {
   position: absolute;
   top: 50%;
-  width: 100%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 24px;
   z-index: 10;
-  transform: translateY(-50%);
   pointer-events: none;
 }
 
@@ -134,22 +135,24 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(16, 18, 26, 0.65);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 229, 255, 0.3);
   color: white;
   cursor: pointer;
   pointer-events: auto;
-  transition: var(--gk-transition);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .geekbar-hero__arrow:hover {
-  background: rgba(0, 229, 255, 0.2);
-  border-color: var(--gk-accent-cyan);
-  color: var(--gk-accent-cyan);
+  background: var(--gk-accent-cyan, #00E5FF);
+  border-color: var(--gk-accent-cyan, #00E5FF);
+  color: #0B0D12;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+  transform: scale(1.1);
 }
 
 @keyframes hero-fade-up {
