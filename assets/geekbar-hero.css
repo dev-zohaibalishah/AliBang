@@ -46,6 +46,44 @@
   will-change: transform;
 }
 
+.geekbar-hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 750px) {
+  .geekbar-hero__bg-img.mobile-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 749px) {
+  .geekbar-hero__bg-img.desktop-only {
+    display: none !important;
+  }
+  .geekbar-hero__bg-img.mobile-only {
+    display: block !important;
+  }
+
+  /* Compact Arrow Buttons for Mobile/Tablet Screens */
+  .geekbar-hero__arrows {
+    padding: 0 10px;
+  }
+
+  .geekbar-hero__arrow {
+    width: 36px;
+    height: 36px;
+    background: rgba(16, 18, 26, 0.8);
+    border: 1px solid rgba(218, 28, 29, 0.5);
+  }
+
+  .geekbar-hero__arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
 .geekbar-hero__overlay {
   position: absolute;
   inset: 0;

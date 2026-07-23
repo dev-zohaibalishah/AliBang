@@ -6,9 +6,16 @@
   <!-- Slides -->
   {% for block in section.blocks %}
   <div class="geekbar-hero__slide {% if forloop.first %}active{% endif %}" {{ block.shopify_attributes }} data-slide-index="{{ forloop.index0 }}">
-    {% if block.settings.image %}
+    {% if block.settings.image != blank or block.settings.image_mobile != blank %}
     <div class="geekbar-hero__bg">
-      {{ block.settings.image | image_url: width: 1920 | image_tag: loading: 'eager', class: 'geekbar-hero__bg-img', sizes: '100vw' }}
+      {% if block.settings.image != blank %}
+        {{ block.settings.image | image_url: width: 1920 | image_tag: loading: 'eager', class: 'geekbar-hero__bg-img desktop-only', sizes: '100vw' }}
+      {% endif %}
+      {% if block.settings.image_mobile != blank %}
+        {{ block.settings.image_mobile | image_url: width: 1000 | image_tag: loading: 'eager', class: 'geekbar-hero__bg-img mobile-only', sizes: '100vw' }}
+      {% elsif block.settings.image != blank %}
+        {{ block.settings.image | image_url: width: 1000 | image_tag: loading: 'eager', class: 'geekbar-hero__bg-img mobile-only', sizes: '100vw' }}
+      {% endif %}
     </div>
     {% else %}
     <div class="geekbar-hero__bg">
@@ -83,7 +90,12 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Image"
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Mobile / Tablet Image (Optional)"
         },
         {
           "type": "text",
