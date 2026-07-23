@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -36,6 +45,15 @@
             "show_gift_card_recipient": true
           }
         },
+        "collapsible_tab_NQn3aY": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Description",
+            "icon": "check_mark",
+            "content": "{{ product.description }}",
+            "page": ""
+          }
+        },
         "description": {
           "type": "description",
           "settings": {}
@@ -54,6 +72,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "collapsible_tab_NQn3aY",
         "description",
         "share"
       ],
@@ -81,7 +100,9 @@
           "settings": {
             "tag": "TECHNOLOGY",
             "heading": "3D CURVED SCREEN",
-            "description": "World's first 3D curved full screen display with real-time battery and e-liquid monitoring."
+            "description": "World's first 3D curved full screen display with real-time battery and e-liquid monitoring.",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "feature_2": {
@@ -89,7 +110,9 @@
           "settings": {
             "tag": "PERFORMANCE",
             "heading": "DUAL MESH COIL SYSTEM",
-            "description": "Advanced dual mesh coil heating technology delivers richer, more consistent flavor with every puff."
+            "description": "Advanced dual mesh coil heating technology delivers richer, more consistent flavor with every puff.",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "feature_3": {
@@ -97,11 +120,17 @@
           "settings": {
             "tag": "POWER",
             "heading": "RAPID USB-C CHARGING",
-            "description": "Get back to full power quickly with USB-C fast charging technology."
+            "description": "Get back to full power quickly with USB-C fast charging technology.",
+            "button_label": "",
+            "button_link": ""
           }
         }
       },
-      "block_order": ["feature_1", "feature_2", "feature_3"],
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ],
       "settings": {
         "heading": "KEY FEATURES"
       }
@@ -109,7 +138,23 @@
     "product_specs": {
       "type": "geekbar-product-specs",
       "settings": {
-        "heading": "SPECIFICATIONS"
+        "heading": "SPECIFICATIONS",
+        "spec_label_1": "E-Liquid Capacity",
+        "spec_value_1": "16ml",
+        "spec_label_2": "Battery",
+        "spec_value_2": "800mAh Rechargeable",
+        "spec_label_3": "Puff Count",
+        "spec_value_3": "Up to 15000",
+        "spec_label_4": "Nicotine Strength",
+        "spec_value_4": "5%",
+        "spec_label_5": "Coil Type",
+        "spec_value_5": "Dual Mesh Coil",
+        "spec_label_6": "Charging Port",
+        "spec_value_6": "Type-C",
+        "spec_label_7": "",
+        "spec_value_7": "",
+        "spec_label_8": "",
+        "spec_value_8": ""
       }
     },
     "collapsible_content": {
@@ -119,28 +164,46 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "How long does the battery last?",
-            "row_content": "<p>Our devices feature a high-capacity battery that can last for days depending on usage.</p>"
+            "icon": "check_mark",
+            "row_content": "<p>Our devices feature a high-capacity battery that can last for days depending on usage.</p>",
+            "page": ""
           }
         },
         "faq_2": {
           "type": "collapsible_row",
           "settings": {
             "heading": "How do I charge the device?",
-            "row_content": "<p>Use the provided USB-C cable for rapid charging. Connect it to any standard USB power adapter.</p>"
+            "icon": "check_mark",
+            "row_content": "<p>Use the provided USB-C cable for rapid charging. Connect it to any standard USB power adapter.</p>",
+            "page": ""
           }
         },
         "faq_3": {
           "type": "collapsible_row",
           "settings": {
             "heading": "Is the device water-resistant?",
-            "row_content": "<p>Our devices are designed to withstand minor splashes, but are not fully waterproof.</p>"
+            "icon": "check_mark",
+            "row_content": "<p>Our devices are designed to withstand minor splashes, but are not fully waterproof.</p>",
+            "page": ""
           }
         }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3"],
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
       "settings": {
+        "caption": "",
         "heading": "FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
         "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
         "padding_top": 36,
         "padding_bottom": 36
       }
