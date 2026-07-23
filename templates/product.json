@@ -40,20 +40,6 @@
           "type": "description",
           "settings": {}
         },
-        "specs_table": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<table class=\"gk-specs-table\">\n  <tbody>\n    <tr>\n      <th>E-Liquid Capacity</th>\n      <td>16ml Pre-filled</td>\n    </tr>\n    <tr>\n      <th>Battery Capacity</th>\n      <td>800mAh (Rechargeable)</td>\n    </tr>\n    <tr>\n      <th>Puff Count</th>\n      <td>Up to 15000 Puffs</td>\n    </tr>\n    <tr>\n      <th>Nicotine Strength</th>\n      <td>5% (50mg)</td>\n    </tr>\n    <tr>\n      <th>Coil Type</th>\n      <td>Dual Mesh Coil</td>\n    </tr>\n    <tr>\n      <th>Charging Port</th>\n      <td>Type-C</td>\n    </tr>\n  </tbody>\n</table>"
-          }
-        },
-        "wishlist_app_wishlist_app_iGFeJB": {
-          "type": "shopify://apps/wishlist-app/blocks/wishlist-app/6280cd93-b89c-46bc-917c-e0a56f6313c4",
-          "settings": {
-            "product": "{{product}}",
-            "text": "Add to wishlist",
-            "colour": "#ff0000"
-          }
-        },
         "share": {
           "type": "share",
           "settings": {
@@ -69,27 +55,25 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "specs_table",
-        "wishlist_app_wishlist_app_iGFeJB",
         "share"
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "scheme-4",
+        "color_scheme": "",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail_slider",
         "media_position": "left",
         "image_zoom": "lightbox",
-        "mobile_thumbnails": "hide",
+        "mobile_thumbnails": "show",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
       }
     },
-    "geekbar_features": {
+    "product_features": {
       "type": "geekbar-product-features",
       "blocks": {
         "feature_1": {
@@ -97,7 +81,7 @@
           "settings": {
             "tag": "TECHNOLOGY",
             "heading": "3D CURVED SCREEN",
-            "description": "World's first 3D curved full screen display with real-time battery and e-liquid monitoring, featuring stunning cosmic background animations."
+            "description": "World's first 3D curved full screen display with real-time battery and e-liquid monitoring."
           }
         },
         "feature_2": {
@@ -105,7 +89,7 @@
           "settings": {
             "tag": "PERFORMANCE",
             "heading": "DUAL MESH COIL SYSTEM",
-            "description": "Advanced dual mesh coil heating technology delivers richer, more consistent flavor with every puff, maximizing vapor production."
+            "description": "Advanced dual mesh coil heating technology delivers richer, more consistent flavor with every puff."
           }
         },
         "feature_3": {
@@ -113,21 +97,23 @@
           "settings": {
             "tag": "POWER",
             "heading": "RAPID USB-C CHARGING",
-            "description": "Get back to full power quickly with USB-C fast charging technology. Reach 80% battery in just 20 minutes."
+            "description": "Get back to full power quickly with USB-C fast charging technology."
           }
         }
       },
-      "block_order": [
-        "feature_1",
-        "feature_2",
-        "feature_3"
-      ],
+      "block_order": ["feature_1", "feature_2", "feature_3"],
       "settings": {
         "heading": "KEY FEATURES"
       }
     },
+    "product_specs": {
+      "type": "geekbar-product-specs",
+      "settings": {
+        "heading": "SPECIFICATIONS"
+      }
+    },
     "collapsible_content": {
-      "type": "collapsible_content",
+      "type": "collapsible-content",
       "blocks": {
         "faq_1": {
           "type": "collapsible_row",
@@ -147,28 +133,26 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "Is the device water-resistant?",
-            "row_content": "<p>Our devices are designed to withstand minor splashes, but are not fully waterproof. Keep away from excessive moisture.</p>"
+            "row_content": "<p>Our devices are designed to withstand minor splashes, but are not fully waterproof.</p>"
           }
         }
       },
-      "block_order": [
-        "faq_1",
-        "faq_2",
-        "faq_3"
-      ],
+      "block_order": ["faq_1", "faq_2", "faq_3"],
       "settings": {
         "heading": "FAQ",
-        "color_scheme": "scheme-4"
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "related-products": {
+    "related_products": {
       "type": "related-products",
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,
-        "color_scheme": "scheme-4",
+        "color_scheme": "",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -182,8 +166,9 @@
   },
   "order": [
     "main",
-    "geekbar_features",
+    "product_features",
+    "product_specs",
     "collapsible_content",
-    "related-products"
+    "related_products"
   ]
 }
