@@ -110,6 +110,7 @@
         "feature_2": {
           "type": "feature",
           "settings": {
+            "image": "{{ product.metafields.custom.key_feature_2.value }}",
             "tag": "PERFORMANCE",
             "heading": "DUAL MESH COIL SYSTEM",
             "description": "Advanced dual mesh coil heating technology delivers richer, more consistent flavor with every puff.",
@@ -120,6 +121,7 @@
         "feature_3": {
           "type": "feature",
           "settings": {
+            "image": "{{ product.metafields.custom.key_feature_3.value }}",
             "tag": "POWER",
             "heading": "RAPID USB-C CHARGING",
             "description": "Get back to full power quickly with USB-C fast charging technology.",
