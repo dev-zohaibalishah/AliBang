@@ -1,16 +1,42 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "geekbar_hero": {
       "type": "geekbar-hero",
       "blocks": {
         "slide_1": {
-          "type": "slide"
+          "type": "slide",
+          "settings": {
+            "tag": "New Arrival",
+            "heading": "EXPLORE THE FUTURE OF VAPING",
+            "subheading": "Experience cutting-edge technology...",
+            "button_label": "Explore Now",
+            "button_link": ""
+          }
         },
         "slide_2": {
-          "type": "slide"
+          "type": "slide",
+          "settings": {
+            "tag": "New Arrival",
+            "heading": "EXPLORE THE FUTURE OF VAPING",
+            "subheading": "Experience cutting-edge technology...",
+            "button_label": "Explore Now",
+            "button_link": ""
+          }
         }
       },
-      "block_order": ["slide_1", "slide_2"],
+      "block_order": [
+        "slide_1",
+        "slide_2"
+      ],
       "settings": {
         "autoplay": true,
         "autoplay_speed": 5
@@ -20,8 +46,9 @@
       "type": "geekbar-product-grid",
       "settings": {
         "heading": "Products",
+        "subheading": "",
+        "collection": "alibarber",
         "products_to_show": 8,
-        "columns": "4",
         "show_view_all": false
       }
     },
@@ -31,50 +58,105 @@
         "video_1": {
           "type": "video_slide",
           "settings": {
-            "title": "Anti counterfeiting measures"
+            "video_url": "",
+            "title": "Anti counterfeiting measures",
+            "link_text": "LEARN MORE",
+            "link": ""
           }
         },
         "video_2": {
           "type": "video_slide",
           "settings": {
-            "title": "Geekbar-Partnered #911"
+            "video_url": "",
+            "title": "Geekbar-Partnered #911",
+            "link_text": "LEARN MORE",
+            "link": ""
           }
         },
         "video_3": {
           "type": "video_slide",
           "settings": {
-            "title": "Rollingloud"
+            "video_url": "",
+            "title": "Rollingloud",
+            "link_text": "LEARN MORE",
+            "link": ""
           }
         },
         "video_4": {
           "type": "video_slide",
           "settings": {
-            "title": "Feel the EDC Energy!"
+            "video_url": "",
+            "title": "Feel the EDC Energy!",
+            "link_text": "LEARN MORE",
+            "link": ""
           }
         }
       },
-      "block_order": ["video_1", "video_2", "video_3", "video_4"],
+      "block_order": [
+        "video_1",
+        "video_2",
+        "video_3",
+        "video_4"
+      ],
       "settings": {
         "heading": "Videos"
       }
     },
     "geekbar_about": {
       "type": "geekbar-about",
-      "settings": {}
+      "settings": {
+        "bg_video": "",
+        "text_1": "GEEKBAR\nTo deeply satisfy vapers' needs by offering the most tasteful, compact,",
+        "text_2": "and safe disposable vape products across brands,",
+        "text_3": "designed with high-quality materials and manufacturing.",
+        "button_text": "VIEW MORE",
+        "button_link": ""
+      }
     },
     "geekbar_social": {
       "type": "geekbar-social",
       "blocks": {
-        "img_1": { "type": "social_image" },
-        "img_2": { "type": "social_image" },
-        "img_3": { "type": "social_image" },
-        "img_4": { "type": "social_image" }
+        "img_1": {
+          "type": "social_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "img_2": {
+          "type": "social_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "img_3": {
+          "type": "social_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "img_4": {
+          "type": "social_image",
+          "settings": {
+            "link": ""
+          }
+        }
       },
-      "block_order": ["img_1", "img_2", "img_3", "img_4"],
+      "block_order": [
+        "img_1",
+        "img_2",
+        "img_3",
+        "img_4"
+      ],
       "settings": {
         "slogan_text": "Follow us @geekbarvape"
       }
     }
   },
-  "order": ["geekbar_hero", "geekbar_products", "geekbar_videos", "geekbar_about", "geekbar_social"]
+  "order": [
+    "geekbar_hero",
+    "geekbar_products",
+    "geekbar_videos",
+    "geekbar_about",
+    "geekbar_social"
+  ]
 }
