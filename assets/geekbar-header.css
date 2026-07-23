@@ -61,7 +61,7 @@
 
 .cart-count-bubble {
   background: var(--gk-accent-cyan) !important;
-  color: var(--gk-bg-primary) !important;
+  color: #FFFFFF !important;
   font-weight: 700 !important;
 }
 
