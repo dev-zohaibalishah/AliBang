@@ -59,6 +59,7 @@
         "video_1": {
           "type": "video_slide",
           "settings": {
+            "image": "shopify://shop_images/Cover.png",
             "video_url": "https://www.youtube.com/watch?v=GHBhR3WTyqk",
             "title": "Step into the future with 𝗜𝗚𝗘𝗧 𝗢𝗡𝗘",
             "link_text": "LEARN MORE",
