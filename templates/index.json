@@ -15,12 +15,13 @@
         "slide_1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_azc5gjazc5gjazc5.png",
-            "tag": "New Arrival",
-            "heading": "EXPLORE THE FUTURE OF VAPING",
-            "subheading": "Experience cutting-edge technology...",
-            "button_label": "Explore Now",
-            "button_link": ""
+            "image": "shopify://shop_images/ALIBANG_BANNER_PHOTO.png",
+            "image_mobile": "shopify://shop_images/ALIBANG_BANNER_PHOTO.png",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://products/iget-bar-pro-10000-puffs"
           }
         },
         "slide_2": {
