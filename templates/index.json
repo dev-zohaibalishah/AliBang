@@ -195,6 +195,40 @@
         "heading": "KEY FEATURES"
       }
     },
+    "collection_list_N4Eaze": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_cD6U9H": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "alibarber"
+          }
+        },
+        "featured_collection_PTe49h": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "iget"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_cD6U9H",
+        "featured_collection_PTe49h"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "geekbar_about": {
       "type": "geekbar-about",
       "settings": {
@@ -244,40 +278,6 @@
       "settings": {
         "slogan_text": "Follow us @AliBang"
       }
-    },
-    "collection_list_N4Eaze": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_cD6U9H": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "alibarber"
-          }
-        },
-        "featured_collection_PTe49h": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "iget"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_cD6U9H",
-        "featured_collection_PTe49h"
-      ],
-      "name": "t:sections.collection-list.presets.name",
-      "settings": {
-        "title": "Collections",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 2,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
     }
   },
   "order": [
@@ -285,8 +285,8 @@
     "geekbar_products",
     "geekbar_videos",
     "geekbar_product_features_fCd84M",
+    "collection_list_N4Eaze",
     "geekbar_about",
-    "geekbar_social",
-    "collection_list_N4Eaze"
+    "geekbar_social"
   ]
 }
