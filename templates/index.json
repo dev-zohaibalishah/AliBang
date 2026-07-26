@@ -27,13 +27,13 @@
         "slide_2": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ALIBANG_ALIBARBAR_INGOT_12000_VIDEO_COVER.png",
-            "image_mobile": "shopify://shop_images/ALIBANG_ALIBARBAR_INGOT_12000_VIDEO_COVER.png",
-            "tag": "ALIBARBAR-INGOT 12000 PUFFS",
-            "heading": "ELEVATE YOUR DAILY VAPE",
-            "subheading": "12000 huge puff capacity | original flavor blends & durable premium hardware for long-lasting daily vaping.",
-            "button_label": "Explore Now",
-            "button_link": ""
+            "image": "shopify://shop_images/ALIBANG_BANNER_PHOTO_2.png",
+            "image_mobile": "shopify://shop_images/ALIBANG_BANNER_PHOTO_2.png",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://products/iget-moon-k5000-5000-puffs"
           }
         }
       },
