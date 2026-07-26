@@ -19,11 +19,17 @@
     text-align: center;
   }
 
-  /* Grid-based video layout (no Swiper dependency) */
-  .geekbar-videos__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+  /* Swiper Carousel */
+  .geekbar-videos__swiper {
+    overflow: hidden;
+    padding-bottom: 50px;
+    position: relative;
+  }
+
+  .geekbar-videos__swiper .swiper-slide {
+    width: 380px;
+    flex-shrink: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
   }
 
   .geekbar-videos__card {
@@ -86,7 +92,7 @@
     box-shadow: 0 0 30px rgba(218, 28, 29, 0.6);
   }
 
-  /* Gradient overlay at bottom */
+  /* Gradient overlay at bottom of thumb */
   .geekbar-videos__overlay {
     position: absolute;
     bottom: 0;
@@ -129,6 +135,64 @@
     fill: none;
     stroke: currentColor;
     stroke-width: 2.5;
+  }
+
+  /* Navigation arrows */
+  .geekbar-videos__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .geekbar-videos__nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .geekbar-videos__nav-btn:hover {
+    background: rgba(218,28,29,0.2);
+    border-color: #DA1C1D;
+    box-shadow: 0 0 16px rgba(218,28,29,0.3);
+  }
+  .geekbar-videos__nav-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+  }
+  .geekbar-videos__nav-btn.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  /* Swiper pagination */
+  .geekbar-videos__swiper .swiper-pagination {
+    position: relative;
+    bottom: auto;
+    margin-top: 24px;
+    text-align: center;
+  }
+  .geekbar-videos__swiper .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.25);
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+  .geekbar-videos__swiper .swiper-pagination-bullet-active {
+    background: #DA1C1D;
+    box-shadow: 0 0 10px rgba(218,28,29,0.5);
+    transform: scale(1.2);
   }
 
   /* Video popup */
@@ -176,25 +240,30 @@
     background: #DA1C1D;
   }
 
-  /* Responsive */
   @media screen and (max-width: 990px) {
-    .geekbar-videos__grid {
-      grid-template-columns: repeat(2, 1fr);
+    .geekbar-videos__swiper .swiper-slide {
+      width: 320px;
     }
   }
   @media screen and (max-width: 749px) {
     .geekbar-videos { padding: 50px 0; }
     .geekbar-videos h2 { font-size: 1.8rem; margin-bottom: 30px; }
-    .geekbar-videos__grid {
-      grid-template-columns: 1fr;
-      gap: 16px;
+    .geekbar-videos__swiper .swiper-slide {
+      width: 85vw;
     }
     .video-pop .main {
       width: 95%;
     }
     .video-pop .btn-close {
       top: -45px;
-      right: 0;
+    }
+    .geekbar-videos__nav-btn {
+      width: 36px;
+      height: 36px;
+    }
+    .geekbar-videos__nav-btn svg {
+      width: 16px;
+      height: 16px;
     }
   }
 </style>
@@ -205,35 +274,50 @@
       <h2 class="gk-fade-in">{{ section.settings.heading }}</h2>
     {% endif %}
 
-    <div class="geekbar-videos__grid">
-      {% for block in section.blocks %}
-        <div class="geekbar-videos__card gk-fade-in" {{ block.shopify_attributes }} data-video="{{ block.settings.video_url }}">
-          <div class="geekbar-videos__thumb">
-            {% if block.settings.image %}
-              {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy' }}
-            {% else %}
-              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
-            {% endif %}
-            <div class="geekbar-videos__overlay"></div>
-            {% if block.settings.video_url != blank %}
-            <div class="geekbar-videos__play">
-              <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"></polygon></svg>
+    <div class="geekbar-videos__swiper swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="swiper-slide" {{ block.shopify_attributes }}>
+            <div class="geekbar-videos__card" data-video="{{ block.settings.video_url }}">
+              <div class="geekbar-videos__thumb">
+                {% if block.settings.image %}
+                  {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy' }}
+                {% else %}
+                  {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+                <div class="geekbar-videos__overlay"></div>
+                {% if block.settings.video_url != blank %}
+                  <div class="geekbar-videos__play">
+                    <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"></polygon></svg>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="geekbar-videos__info">
+                {% if block.settings.title != blank %}
+                  <h3 class="geekbar-videos__title">{{ block.settings.title }}</h3>
+                {% endif %}
+                {% if block.settings.link != blank and block.settings.link_text != blank %}
+                  <a href="{{ block.settings.link }}" class="geekbar-videos__link">
+                    {{ block.settings.link_text }}
+                    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </a>
+                {% endif %}
+              </div>
             </div>
-            {% endif %}
           </div>
-          <div class="geekbar-videos__info">
-            {% if block.settings.title != blank %}
-              <h3 class="geekbar-videos__title">{{ block.settings.title }}</h3>
-            {% endif %}
-            {% if block.settings.link != blank and block.settings.link_text != blank %}
-              <a href="{{ block.settings.link }}" class="geekbar-videos__link">
-                {{ block.settings.link_text }}
-                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
-              </a>
-            {% endif %}
-          </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="geekbar-videos__nav">
+      <button class="geekbar-videos__nav-btn geekbar-videos__prev" aria-label="Previous video">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="geekbar-videos__nav-btn geekbar-videos__next" aria-label="Next video">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
     </div>
   </div>
 </div>
@@ -247,6 +331,29 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Swiper === 'undefined') return;
+
+    var videosSwiper = new Swiper('.geekbar-videos__swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 24,
+      loop: true,
+      speed: 600,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+      },
+      pagination: {
+        el: '.geekbar-videos__swiper .swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        prevEl: '.geekbar-videos__prev',
+        nextEl: '.geekbar-videos__next'
+      }
+    });
+
+    /* Video popup */
     var videoCards = document.querySelectorAll('.geekbar-videos__card[data-video]');
     var videoPop = document.getElementById('videoPopup');
     var popupVideo = document.getElementById('popupVideo');
@@ -256,9 +363,7 @@
 
     videoCards.forEach(function(card) {
       card.addEventListener('click', function(e) {
-        // Don't open popup if user clicked on the "Learn more" link
         if (e.target.closest('.geekbar-videos__link')) return;
-
         var videoUrl = this.getAttribute('data-video');
         if (videoUrl) {
           popupVideo.src = videoUrl;
