@@ -247,24 +247,42 @@
         "img_1": {
           "type": "social_image",
           "settings": {
+            "image": "shopify://shop_images/BlackBerry_ICE_59006aa3-0596-40d7-8e93-d3ef5672d163.png",
             "link": ""
           }
         },
         "img_2": {
           "type": "social_image",
           "settings": {
+            "image": "shopify://shop_images/Kiwi_PineApple_632276d0-d918-482b-a1eb-ad719d10bde9.png",
             "link": ""
           }
         },
         "img_3": {
           "type": "social_image",
           "settings": {
+            "image": "shopify://shop_images/CHERRY_MONSTER.png",
             "link": ""
           }
         },
         "img_4": {
           "type": "social_image",
           "settings": {
+            "image": "shopify://shop_images/DRAGONFRUIT_LEMON_ICE.png",
+            "link": ""
+          }
+        },
+        "social_image_KBdkcQ": {
+          "type": "social_image",
+          "settings": {
+            "image": "shopify://shop_images/Mango_ICE_595a38dc-22bd-453d-9157-fbbd6c8dfeb8.jpg",
+            "link": ""
+          }
+        },
+        "social_image_Jm3FPg": {
+          "type": "social_image",
+          "settings": {
+            "image": "shopify://shop_images/MAIN_Photo_4.png",
             "link": ""
           }
         }
@@ -273,7 +291,9 @@
         "img_1",
         "img_2",
         "img_3",
-        "img_4"
+        "img_4",
+        "social_image_KBdkcQ",
+        "social_image_Jm3FPg"
       ],
       "settings": {
         "slogan_text": "Follow us @AliBang"
