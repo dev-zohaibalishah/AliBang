@@ -7,9 +7,11 @@
   background: var(--gk-bg-primary);
 }
 
-@media (max-width: 750px) {
+@media (max-width: 749px) {
   .geekbar-hero {
-    min-height: 70vh;
+    min-height: auto !important;
+    height: auto !important;
+    aspect-ratio: 9 / 16 !important;
   }
 }
 
