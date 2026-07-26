@@ -59,6 +59,7 @@
         "video_slide_gnGDre": {
           "type": "video_slide",
           "settings": {
+            "image": "shopify://shop_images/Cover.png",
             "video_url": "https://cdn.shopify.com/videos/c/o/v/16fa5cba8e1145e19cdbc04228f2d716.mp4",
             "title": "Step into the future with ALIBANG 𝗜𝗚𝗘𝗧 𝗢𝗡𝗘",
             "link_text": "WATCH NOW:",
@@ -68,9 +69,10 @@
         "video_2": {
           "type": "video_slide",
           "settings": {
-            "video_url": "",
-            "title": "Geekbar-Partnered #911",
-            "link_text": "LEARN MORE",
+            "image": "shopify://shop_images/ALIBANG_ALIBARBAR_INGOT_12000_VIDEO_COVER.png",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/854e93592fab4369814593fd6794872e.mp4",
+            "title": "ALIBANG-INGOT 12000 Premium",
+            "link_text": "WATCH NOW",
             "link": ""
           }
         },
