@@ -12,6 +12,17 @@
     "geekbar_hero": {
       "type": "geekbar-hero",
       "blocks": {
+        "slide_KdWGbw": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ALIBANG_BANNER_3.png",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://products/iget-one-12000"
+          }
+        },
         "slide_1": {
           "type": "slide",
           "settings": {
@@ -38,6 +49,7 @@
         }
       },
       "block_order": [
+        "slide_KdWGbw",
         "slide_1",
         "slide_2"
       ],
