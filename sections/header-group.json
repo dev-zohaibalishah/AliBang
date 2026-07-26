@@ -53,55 +53,10 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
-    },
-    "geekbar_product_features_r8wme8": {
-      "type": "geekbar-product-features",
-      "blocks": {
-        "feature_HnDhJK": {
-          "type": "feature",
-          "settings": {
-            "tag": "TECHNOLOGY",
-            "heading": "3D CURVED SCREEN",
-            "description": "World's first 3D curved full screen display with real-time battery and e-liquid monitoring, featuring stunning cosmic background animations.",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "feature_izWBm7": {
-          "type": "feature",
-          "settings": {
-            "tag": "PERFORMANCE",
-            "heading": "DUAL MESH COIL SYSTEM",
-            "description": "Advanced dual mesh coil heating technology delivers richer, more consistent flavor with every puff, maximizing vapor production.",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "feature_dmmzWF": {
-          "type": "feature",
-          "settings": {
-            "tag": "POWER",
-            "heading": "RAPID USB-C CHARGING",
-            "description": "Get back to full power quickly with USB-C fast charging technology. Reach 80% battery in just 20 minutes.",
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "feature_HnDhJK",
-        "feature_izWBm7",
-        "feature_dmmzWF"
-      ],
-      "name": "GeekBar Product Features",
-      "settings": {
-        "heading": "KEY FEATURES"
-      }
     }
   },
   "order": [
     "announcement-bar",
-    "header",
-    "geekbar_product_features_r8wme8"
+    "header"
   ]
 }
