@@ -89,9 +89,10 @@
         "video_4": {
           "type": "video_slide",
           "settings": {
-            "video_url": "",
-            "title": "Feel the EDC Energy!",
-            "link_text": "LEARN MORE",
+            "image": "shopify://shop_images/ALIBANG_IGET_MOON_K5000_Video_Cover.png",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/3988f4b206554acf92b45d784d1bd82e.mp4",
+            "title": "ALIBANG | IGET MOON K5000",
+            "link_text": "WATCH NOW",
             "link": ""
           }
         }
