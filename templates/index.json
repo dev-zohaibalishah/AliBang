@@ -12,6 +12,18 @@
     "geekbar_hero": {
       "type": "geekbar-hero",
       "blocks": {
+        "slide_3AbmVD": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ALIBANG_BANNER_5.png",
+            "image_mobile": "shopify://shop_images/ALIBANG_BANNER_5.png",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://products/alibarbar-12000-puffs-adjustable-ice-disposable-vape-dual-mesh-coil-luxury-aluminum-shell-rechargeable-vape-device"
+          }
+        },
         "slide_wYfQzd": {
           "type": "slide",
           "settings": {
@@ -61,6 +73,7 @@
         }
       },
       "block_order": [
+        "slide_3AbmVD",
         "slide_wYfQzd",
         "slide_KdWGbw",
         "slide_1",
