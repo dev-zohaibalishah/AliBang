@@ -121,12 +121,12 @@
         "feature_3": {
           "type": "feature",
           "settings": {
-            "image": "{{ product.metafields.custom.key_feature_3.value }}",
-            "tag": "POWER",
-            "heading": "RAPID USB-C CHARGING",
-            "description": "Get back to full power quickly with USB-C fast charging technology.",
-            "button_label": "",
-            "button_link": ""
+            "image": "shopify://shop_images/Weixin_Image_20260724163738_991_43.png",
+            "tag": "STREET DESIGN & ERGONOMIC BUILD",
+            "heading": "IGET BAR PRO | Punk Rock Styling & Portable Robust Build",
+            "description": "Stand out with eye-catching gradient casing paired with exclusive punk rock graffiti artwork, delivering bold street fashion aesthetics unavailable on standard disposable vapes. The streamlined cylindrical ergonomic shape creates a comfortable non-slip hand feel and easily slips into pockets or bags for all outdoor and daily commuting use.\nSupported by a precision mesh coil structure for stable, smooth vapor delivery from start to finish. Multi-layer internal leak-proof sealing effectively prevents liquid leakage during squeezing, shaking or temperature changes. Equipped with a steady built-in battery system with complete circuit safety protection for secure long-term use. Matching the core slogan *Rock Never Stop*, this unit blends trendy visual personality with dependable, hassle-free vaping performance for style-driven adult consumers.",
+            "button_label": "View Product Range",
+            "button_link": "shopify://products/iget-bar-pro-10000-puffs"
           }
         }
       },
