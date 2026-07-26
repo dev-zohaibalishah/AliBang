@@ -56,13 +56,12 @@
     "geekbar_videos": {
       "type": "geekbar-videos",
       "blocks": {
-        "video_1": {
+        "video_slide_gnGDre": {
           "type": "video_slide",
           "settings": {
-            "image": "shopify://shop_images/Cover.png",
-            "video_url": "https://www.youtube.com/watch?v=GHBhR3WTyqk",
-            "title": "Step into the future with 𝗜𝗚𝗘𝗧 𝗢𝗡𝗘",
-            "link_text": "LEARN MORE",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/16fa5cba8e1145e19cdbc04228f2d716.mp4",
+            "title": "Step into the future with ALIBANG 𝗜𝗚𝗘𝗧 𝗢𝗡𝗘",
+            "link_text": "WATCH NOW:",
             "link": ""
           }
         },
@@ -95,7 +94,7 @@
         }
       },
       "block_order": [
-        "video_1",
+        "video_slide_gnGDre",
         "video_2",
         "video_3",
         "video_4"
