@@ -165,11 +165,12 @@
         "feature_WyppzU": {
           "type": "feature",
           "settings": {
-            "tag": "PERFORMANCE",
-            "heading": "DUAL MESH COIL SYSTEM",
-            "description": "Advanced dual mesh coil heating technology delivers richer, more consistent flavor with every puff, maximizing vapor production.",
-            "button_label": "",
-            "button_link": ""
+            "image": "shopify://shop_images/Cover.png",
+            "tag": "PERFORMANCE & CHARGING TECHNOLOGY",
+            "heading": "DUAL MESH COIL + SMART DIGITAL DISPLAY + FAST TYPE-C CHARGING",
+            "description": "Equipped with upgraded dual mesh coil heating technology, this device delivers uniform heating across the e-liquid for richer, smoother vapour clouds while maintaining steady, original flavour consistency through every draw with zero burnt aftertaste.\nThe central glowing smart digital screen provides real-time data monitoring, showing exact battery percentage and remaining e-liquid level for precise usage control and avoiding unexpected dry hits.\nBuilt with efficient Type-C fast charging architecture paired with intelligent multi-protection circuitry that prevents overcharging, overheating and short circuits during charging cycles. Safe, stable charging brings long-lasting overall device service life to match the huge flavor selection lineup on our store.",
+            "button_label": "Explore All Flavors",
+            "button_link": "shopify://products/iget-one-12000"
           }
         },
         "feature_zcYpBF": {
