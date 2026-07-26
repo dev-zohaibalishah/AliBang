@@ -12,6 +12,18 @@
     "geekbar_hero": {
       "type": "geekbar-hero",
       "blocks": {
+        "slide_wYfQzd": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ALIBANG_BANNER_4.png",
+            "image_mobile": "shopify://shop_images/ALIBANG_BANNER_4.png",
+            "tag": "",
+            "heading": "",
+            "subheading": "",
+            "button_label": "SHOP NOW",
+            "button_link": "shopify://products/alibarbar-ice-adjust-12000-puffs-rechargeable-disposable-device-adjustable-ice-cooling-mesh-coil-with-digital-battery-liquid-display"
+          }
+        },
         "slide_KdWGbw": {
           "type": "slide",
           "settings": {
@@ -49,6 +61,7 @@
         }
       },
       "block_order": [
+        "slide_wYfQzd",
         "slide_KdWGbw",
         "slide_1",
         "slide_2"
