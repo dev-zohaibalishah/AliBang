@@ -110,12 +110,12 @@
         "feature_2": {
           "type": "feature",
           "settings": {
-            "image": "{{ product.metafields.custom.key_feature_2.value }}",
-            "tag": "PERFORMANCE",
-            "heading": "DUAL MESH COIL SYSTEM",
-            "description": "Advanced dual mesh coil heating technology delivers richer, more consistent flavor with every puff.",
-            "button_label": "",
-            "button_link": ""
+            "image": "shopify://shop_images/Cover.png",
+            "tag": "PERFORMANCE & INTELLIGENT TECHNOLOGY",
+            "heading": "DUAL MESH COIL SYSTEM | Curved Smart Screen & Turbo Mode",
+            "description": "The IGET ONE adopts premium dual mesh coil heating technology to deliver uniform e-liquid heating, generating dense, smooth vapour while preserving original flavour purity throughout the whole service life without burnt taste. Equipped with a stylish curved LED display screen, it displays real-time battery power and e-liquid volume for intuitive usage monitoring. Built-in adjustable Turbo Mode provides intensified vapour output for stronger flavour impact to match different vaping habits. Powered by a large-capacity 2700mAh stable lithium battery paired with standard Type-C fast charging and multi-layer safety protection circuits to prevent overcharging, overheating and short-circuits for reliable daily safe use. The exquisite two-tone gold-black metal casing delivers premium texture alongside solid structural leak-proof design.",
+            "button_label": "View All Flavors",
+            "button_link": "shopify://products/iget-one-12000"
           }
         },
         "feature_3": {
