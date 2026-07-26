@@ -79,9 +79,10 @@
         "video_3": {
           "type": "video_slide",
           "settings": {
+            "image": "shopify://shop_images/ALIBANG_IGET_BAR_PRO_COVER.png",
             "video_url": "",
-            "title": "Rollingloud",
-            "link_text": "LEARN MORE",
+            "title": "Rock the Flavor with ALIBANG",
+            "link_text": "WATCH NOW",
             "link": ""
           }
         },
