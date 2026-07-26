@@ -54,10 +54,10 @@
         "padding_bottom": 20
       }
     },
-    "geekbar_product_features_Vt3ThD": {
+    "geekbar_product_features_r8wme8": {
       "type": "geekbar-product-features",
       "blocks": {
-        "feature_QTcyAJ": {
+        "feature_HnDhJK": {
           "type": "feature",
           "settings": {
             "tag": "TECHNOLOGY",
@@ -67,7 +67,7 @@
             "button_link": ""
           }
         },
-        "feature_HBzBFg": {
+        "feature_izWBm7": {
           "type": "feature",
           "settings": {
             "tag": "PERFORMANCE",
@@ -77,7 +77,7 @@
             "button_link": ""
           }
         },
-        "feature_zd4dki": {
+        "feature_dmmzWF": {
           "type": "feature",
           "settings": {
             "tag": "POWER",
@@ -89,9 +89,9 @@
         }
       },
       "block_order": [
-        "feature_QTcyAJ",
-        "feature_HBzBFg",
-        "feature_zd4dki"
+        "feature_HnDhJK",
+        "feature_izWBm7",
+        "feature_dmmzWF"
       ],
       "name": "GeekBar Product Features",
       "settings": {
@@ -102,6 +102,6 @@
   "order": [
     "announcement-bar",
     "header",
-    "geekbar_product_features_Vt3ThD"
+    "geekbar_product_features_r8wme8"
   ]
 }
