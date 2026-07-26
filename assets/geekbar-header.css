@@ -1,7 +1,5 @@
 /* GeekBar Header CSS */
 .header-wrapper {
-  position: sticky !important;
-  top: 0;
   backdrop-filter: blur(20px) !important;
   background: rgba(11, 13, 18, 0.9) !important;
   z-index: 1000 !important;
