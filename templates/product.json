@@ -99,10 +99,10 @@
         "feature_1": {
           "type": "feature",
           "settings": {
-            "image": "{{ product.metafields.custom.key_feature_1.value }}",
-            "tag": "TECHNOLOGY",
-            "heading": "3D CURVED SCREEN",
-            "description": "World's first 3D curved full screen display with real-time battery and e-liquid monitoring.",
+            "image": "shopify://shop_images/ALL_FLAVORS_FEATURE_CARD.png",
+            "tag": "FLAVORS",
+            "heading": "FLAVOUR – Authentic Factory-Grade Flavor Library",
+            "description": "All flavor formulas are strictly original factory recipes. Cover icy berries, tropical fruits, soda blends and classic candy tastes with pure, refreshing cold notes. Multiple flavor options satisfy diverse taste preferences and support multi-flavor purchase choices.",
             "button_label": "",
             "button_link": ""
           }
