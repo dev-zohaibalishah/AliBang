@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/ALIBANG_BANNER_PHOTO.png",
-            "image_mobile": "shopify://shop_images/ALIBANG_BANNER_PHOTO.png",
+            "image_mobile": "shopify://shop_images/ALIBANG_BANNER_Mobile.png",
             "tag": "",
             "heading": "",
             "subheading": "",
@@ -28,7 +28,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/ALIBANG_BANNER_PHOTO_2.png",
-            "image_mobile": "shopify://shop_images/ALIBANG_BANNER_PHOTO_2.png",
+            "image_mobile": "shopify://shop_images/ALIBANG_BANNER_Mobile_2.png",
             "tag": "",
             "heading": "",
             "subheading": "",
@@ -40,7 +40,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/ALIBANG_BANNER_5.png",
-            "image_mobile": "shopify://shop_images/ALIBANG_BANNER_5.png",
+            "image_mobile": "shopify://shop_images/ALIBANG_BANNER_Mobile_3_a79259ae-aa45-491d-8175-e884fdd85267.png",
             "tag": "",
             "heading": "",
             "subheading": "",
@@ -64,6 +64,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/ALIBANG_BANNER_3.png",
+            "image_mobile": "shopify://shop_images/ALIBANG_BANNER_Mobile_5.png",
             "tag": "",
             "heading": "",
             "subheading": "",
