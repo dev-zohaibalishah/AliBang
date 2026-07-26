@@ -154,11 +154,12 @@
         "feature_W6NJdg": {
           "type": "feature",
           "settings": {
-            "tag": "TECHNOLOGY",
-            "heading": "3D CURVED SCREEN",
-            "description": "World's first 3D curved full screen display with real-time battery and e-liquid monitoring, featuring stunning cosmic background animations.",
-            "button_label": "",
-            "button_link": ""
+            "image": "shopify://shop_images/ALIBANG_ALIBARBAR_INGOT_12000_VIDEO_COVER.png",
+            "tag": "Smart Screen Disposable Vape",
+            "heading": "CAPACITY & SMART DISPLAY – INGOT 12000 Long Lasting Vaping Experience",
+            "description": "The ALIBARBAR INGOT 12000 delivers an ultra-long 12000-puff lifespan paired with a built-in digital smart screen that displays real-time battery percentage and remaining e-liquid volume. Crafted with sturdy metallic ingot-style casing and industrial-grade leak-proof internal sealing structure, it prevents liquid spillage during movement or temperature shifts. Equipped with multi-layer intelligent safety circuits to defend against overheating, over-discharge and short-circuit risks for stable, secure daily use. Paired with original factory e-liquid formulas and optimized mesh coil technology, it consistently delivers clean, full-bodied flavor from the first draw to the last puff.",
+            "button_label": "View Full Detail",
+            "button_link": "shopify://products/alibarbar-ice-adjust-12000-puffs-rechargeable-disposable-device-adjustable-ice-cooling-mesh-coil-with-digital-battery-liquid-display"
           }
         },
         "feature_WyppzU": {
