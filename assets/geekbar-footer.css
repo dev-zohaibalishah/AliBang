@@ -14,7 +14,7 @@
 .footer-block__heading {
   color: var(--gk-text-primary) !important;
   text-transform: uppercase !important;
-  font-size: 1rem !important;
+  font-size: 1.4rem !important;
   letter-spacing: 0.1em !important;
   margin-bottom: 20px !important;
 }

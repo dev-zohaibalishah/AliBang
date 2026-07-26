@@ -24,7 +24,7 @@
 .header__menu-item, .list-menu__item--link {
   color: var(--gk-text-secondary) !important;
   text-transform: uppercase !important;
-  font-size: 0.85rem !important;
+  font-size: 1.4rem !important;
   letter-spacing: 0.12em !important;
   font-weight: 500 !important;
   position: relative;
@@ -114,7 +114,7 @@
 .announcement-bar__message {
   font-family: var(--gk-font-body, 'Inter', sans-serif) !important;
   font-weight: 700 !important;
-  font-size: clamp(0.75rem, 1.5vw, 0.9rem) !important;
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem) !important;
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
   color: var(--gk-accent-cyan, #00E5FF) !important;
