@@ -48,7 +48,7 @@
       "settings": {
         "heading": "Products",
         "subheading": "",
-        "collection": "alibarber",
+        "collection": "frontpage",
         "products_to_show": 8,
         "show_view_all": false
       }
