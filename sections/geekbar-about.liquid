@@ -29,9 +29,16 @@
   .home-about-container .logo-mask {
     position: absolute;
     z-index: 2;
-    width: 30vw;
+    width: 35vw;
     max-width: 500px;
+    height: auto !important;
+    object-fit: contain;
     transition: transform 0.1s linear, opacity 0.3s;
+  }
+  @media screen and (max-width: 749px) {
+    .home-about-container .logo-mask {
+      width: 65vw;
+    }
   }
   .home-about-container .content {
     position: relative;
